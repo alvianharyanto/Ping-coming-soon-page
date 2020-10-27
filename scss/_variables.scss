@@ -1,0 +1,61 @@
+// color
+// -primary
+$blue : hsl(223, 87%, 63%);
+
+// -secondary
+$paleBlue:hsl(223, 100%, 88%);
+$lightRed: hsl(354, 100%, 66%);
+
+// -neutral
+$gray: hsl(0, 0%, 59%);
+$veryDarkBlue: hsl(209, 33%, 12%);
+
+// font
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+$fontText: 'Libre Franklin',
+sans-serif;
+
+@mixin fontWeight ($name) {
+    @if $name==normal {
+        font-weight: 300;
+    }
+
+    @else if $name==semi-bold {
+        font-weight: 600;
+    }
+
+    @else if $name==bold {
+        font-weight: 700;
+    }
+}
+
+// media
+@mixin media ($name) {
+    @if $name==mobile {
+        @media screen and (min-width:324px) {
+            @content;
+        }
+    }
+
+    @else if $name==tablet {
+        @media screen and (min-width:724px) {
+            @content;
+        }
+    }
+
+    @else if $name==desktop {
+        @media screen and (min-width:1224px) {
+            @content;
+        }
+    }
+
+
+    @else if $name==largscreen {
+        @media screen and (min-width:1624px) {
+            @content;
+        }
+    }
+}
+
+// keyframes animation
