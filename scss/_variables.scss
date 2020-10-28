@@ -33,29 +33,27 @@ sans-serif;
 // media
 @mixin media ($name) {
     @if $name==mobile {
-        @media screen and (min-width:324px) {
+        @media screen and (max-width:324px) {
             @content;
         }
     }
 
     @else if $name==tablet {
-        @media screen and (min-width:724px) {
+        @media screen and (max-width:724px) {
             @content;
         }
     }
 
     @else if $name==desktop {
-        @media screen and (min-width:1224px) {
+        @media screen and (max-width:1224px) {
             @content;
         }
     }
 
 
     @else if $name==largscreen {
-        @media screen and (min-width:1624px) {
+        @media screen and (max-width:1624px) {
             @content;
         }
     }
 }
-
-// keyframes animation

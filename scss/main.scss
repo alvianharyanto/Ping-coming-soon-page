@@ -10,7 +10,6 @@
 
 body {
     background: white;
-    color: #787887;
     font-size: 20px;
     font-family: $fontText;
     @include fontWeight (normal);
@@ -21,18 +20,168 @@ body {
 }
 
 .container {
-    width: calc(100% - 35rem);
+
+    max-width: 40rem;
     height: 100%;
     margin: auto;
     // display: flex;
     text-align: center;
+
+    @include media (desktop) {
+        width: calc(100% - 6rem);
+    }
+}
+
+
+.logo {
+
+    &-wrap {
+        margin: 4em auto 1.5em;
+
+        @include media (desktop) {
+            margin: 8.5em auto 3em !important;
+        }
+    }
+}
+
+.title {
+    margin-bottom: .5rem;
+    font-size: 3rem;
+    @include fontWeight (normal);
+    color: $gray;
+
+    & * {
+        @include fontWeight (bold);
+        color: $veryDarkBlue;
+    }
+
+    @include media (desktop) {
+        margin-bottom: 2rem !important;
+    }
+}
+
+.subscribe {
+    margin: 2em auto;
+    display: flex;
+    justify-content: space-between;
+
+    @include media (desktop) {
+        margin: 3.5em 2rem !important;
+        flex-direction: column;
+    }
+
+    & * {
+        height: 3.5rem;
+        border-radius: 3rem;
+
+        @include media (desktop) {
+            height: 5rem !important;
+        }
+    }
+
+    .email-input {
+        width: 65%;
+        border: .5px solid $paleBlue;
+        padding-left: 2rem;
+        font-size: .9em;
+
+        @include media (desktop) {
+            width: 100% !important;
+        }
+
+    }
+
+    ::placeholder {
+        color: $gray;
+    }
+
+    .email-button {
+        background: $blue;
+        color: white;
+        width: 32%;
+        cursor: pointer;
+        font-size: .9em;
+        @include fontWeight (semi-bold);
+        border: none;
+        box-shadow: 1px 5px 10px -5px $blue;
+        transition: 1s;
+
+        &:hover {
+            opacity: .7;
+        }
+
+        @include media (desktop) {
+            width: 100% !important;
+            margin-top: 1rem;
+        }
+    }
+
+    .allert {
+        color: $lightRed;
+        transform: translateY(4rem) translateX(2rem);
+        font-size: .8rem;
+        position: absolute;
+
+        @include media (desktop) {
+            position: relative;
+            height: 4rem !important;
+            padding: 2rem;
+            transform: translateX(0) translateY(0);
+            display: none;
+        }
+    }
+
+
 }
 
 .box-images {
     width: 100%;
     position: relative;
+    margin: 5rem auto 4rem;
 
     .illustration-dasboard {
         width: 100%;
     }
+
+    @include media (desktop) {
+        margin: 10rem auto 15rem !important;
+    }
+}
+
+.share {
+    display: flex;
+    justify-content: center;
+
+    @include media (desktop) {
+        margin: 5rem !important;
+    }
+
+    a {
+        margin: auto .5rem;
+        width: 32px;
+        height: 32px;
+        border: 1px solid $blue;
+        border-radius: 50%;
+        display: flex;
+        transition: 1s;
+
+        &:hover {
+            background: $blue;
+        }
+
+        &:hover>* {
+            fill: white;
+        }
+    }
+
+    svg {
+        fill: $blue;
+        margin: auto;
+    }
+}
+
+.copyright {
+    margin: 1rem;
+    font-size: .6em;
+    color: $gray;
 }
